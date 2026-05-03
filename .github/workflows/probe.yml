@@ -1,0 +1,37 @@
+name: Probe
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # every 5 minutes
+  workflow_dispatch:        # allow manual triggers
+
+permissions:
+  contents: write           # needed to commit results
+
+concurrency:
+  group: probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Run probes
+        run: node probes/run.mjs
+
+      - name: Commit results
+        run: |
+          git config user.name "liqaa-probe[bot]"
+          git config user.email "probe@liqaa.io"
+          git add results/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "probe: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
