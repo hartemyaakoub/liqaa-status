@@ -16,15 +16,15 @@ Probed every 5 minutes by GitHub Actions. Results committed back to this repo as
 
 ```
 GitHub Actions (cron */5 * * * *)
-        │
-        ▼
- probes/run.mjs  ──── HTTPS+HEAD ────▶  liqaa.io endpoints
-        │
-        ▼
- results/YYYY-MM/HH-MM.json  (commit)
-        │
-        ▼
- status.liqaa.io  (read from main branch · CDN-cached)
+
+
+ probes/run.mjs HTTPS+HEAD liqaa.io endpoints
+
+
+ results/YYYY-MM/HH-MM.json (commit)
+
+
+ status.liqaa.io (read from main branch · CDN-cached)
 ```
 
 Every 5 minutes a GitHub Actions workflow:
@@ -38,20 +38,20 @@ Every 5 minutes a GitHub Actions workflow:
 
 ## Probed endpoints
 
-| Endpoint                              | Critical? | Probe method        |
+| Endpoint | Critical? | Probe method |
 | ------------------------------------- | --------- | ------------------- |
-| `https://liqaa.io/`                   | Yes       | HEAD, expect 200    |
-| `https://liqaa.io/sdk.js`             | Yes       | HEAD, expect 200    |
-| `https://liqaa.io/api/public/v1/...`  | Yes       | health probe        |
-| `https://liqaa.io/console`            | No        | HEAD, expect 200/302 |
-| `https://liqaa.io/docs`               | No        | HEAD, expect 200    |
-| `wss://liqaa.io/rtc`                  | Yes       | WebSocket handshake |
+| `https://liqaa.io/` | Yes | HEAD, expect 200 |
+| `https://liqaa.io/sdk.js` | Yes | HEAD, expect 200 |
+| `https://liqaa.io/api/public/v1/...` | Yes | health probe |
+| `https://liqaa.io/console` | No | HEAD, expect 200/302 |
+| `https://liqaa.io/docs` | No | HEAD, expect 200 |
+| `wss://liqaa.io/rtc` | Yes | WebSocket handshake |
 
 ## Status definitions
 
-- **🟢 Operational** — All probes returned 2xx within p99 < 1s.
-- **🟡 Degraded** — One or more probes timed out or returned 5xx in the last 15 min.
-- **🔴 Outage** — Critical endpoint unreachable for 3+ consecutive probes (15 min).
+- ** Operational** — All probes returned 2xx within p99 < 1s.
+- ** Degraded** — One or more probes timed out or returned 5xx in the last 15 min.
+- ** Outage** — Critical endpoint unreachable for 3+ consecutive probes (15 min).
 
 ## Subscribe
 
