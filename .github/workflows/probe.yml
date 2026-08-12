@@ -29,7 +29,14 @@ jobs:
       - name: Run probes
         run: node probes/run.mjs
 
+      # always(): the probe exits non-zero on an outage so the badge turns red.
+      # Without this, that exit code also skips the commit — so the one event the
+      # repository exists to record is the one event it never records. That is
+      # what happened here: every run from 13 May to 12 August 2026 reported an
+      # outage, exited 1, skipped this step, and wrote nothing. 1,302 runs, zero
+      # snapshots. Evidence is collected first; the signal comes after.
       - name: Commit results
+        if: always()
         run: |
           git config user.name "liqaa-probe[bot]"
           git config user.email "probe@liqaa.io"

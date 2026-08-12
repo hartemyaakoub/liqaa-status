@@ -62,9 +62,13 @@ repository — not a degraded endpoint, a URL that does not exist.
   never makes them up. Read the timestamps, not the cron line.
 - **Resolution is one probe.** With a few hundred samples, availability cannot be
   reported to more decimal places than one missed probe is worth.
-- **There is a three-month hole.** Probing stopped on 13 May 2026 and resumed in
-  August; GitHub disables scheduled workflows on repositories that go quiet. The
-  gap is visible in `results/` and is left there rather than backfilled.
+- **There is a three-month hole.** No snapshot was written between 13 May and 12
+  August 2026. The workflow was not disabled and never stopped running: it ran
+  1,302 times and failed every one. The probe exits non-zero on an outage to turn
+  the badge red, and that exit code also skipped the commit step — so the outage
+  it had just detected was never recorded. The commit step now runs on
+  `always()`. The gap is visible in `results/` and is left there rather than
+  backfilled.
 
 Fleet-wide availability across all TKAWEN platforms — including liqaa.io — is
 measured continuously and published at
