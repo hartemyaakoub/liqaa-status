@@ -2,7 +2,12 @@ name: Probe
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # every 5 minutes
+    # Asking for */5 does not produce */5. Across the 137 snapshots already in
+    # results/, the median gap between runs was 90 minutes — GitHub drops
+    # scheduled runs under load and never makes them up. */30 is requested here
+    # because a cadence that is missed nineteen times out of twenty is a claim,
+    # not a schedule.
+    - cron: '*/30 * * * *'
   workflow_dispatch:        # allow manual triggers
 
 permissions:
@@ -34,4 +39,9 @@ jobs:
             exit 0
           fi
           git commit -m "probe: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push
+          # Two probes finishing close together both push; without the rebase the
+          # loser drops its snapshot on the floor and the gap looks like downtime.
+          for i in 1 2 3; do
+            git pull --rebase -q origin HEAD && git push && break
+            echo "push retry $i"; sleep 3
+          done
