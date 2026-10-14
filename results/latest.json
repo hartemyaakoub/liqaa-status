@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-10-14T11:41:59.460Z",
+  "timestamp": "2026-10-14T16:58:20.148Z",
   "region": "github-ubuntu-east",
-  "overall": "outage",
+  "overall": "operational",
   "results": [
     {
       "name": "home",
       "url": "https://liqaa.io/",
-      "final_url": null,
-      "status": 0,
-      "ok": false,
-      "error": "timeout",
+      "final_url": "https://liqaa.io/ar",
+      "status": 200,
+      "ok": true,
+      "error": null,
       "critical": true,
-      "latency_ms": 8003
+      "latency_ms": 808
     },
     {
       "name": "sdk",
@@ -21,47 +21,47 @@
       "ok": true,
       "error": null,
       "critical": true,
-      "latency_ms": 4530
+      "latency_ms": 615
     },
     {
       "name": "docs",
       "url": "https://liqaa.io/docs",
-      "final_url": null,
-      "status": 0,
-      "ok": false,
-      "error": "timeout",
+      "final_url": "https://liqaa.io/ar/docs",
+      "status": 200,
+      "ok": true,
+      "error": null,
       "critical": false,
-      "latency_ms": 8000
+      "latency_ms": 1061
     },
     {
       "name": "console",
       "url": "https://liqaa.io/console",
-      "final_url": null,
-      "status": 0,
-      "ok": false,
-      "error": "timeout",
+      "final_url": "https://liqaa.io/ar/console",
+      "status": 200,
+      "ok": true,
+      "error": null,
       "critical": false,
-      "latency_ms": 8000
+      "latency_ms": 936
     },
     {
       "name": "status",
       "url": "https://liqaa.io/status",
       "final_url": null,
-      "status": 0,
-      "ok": false,
-      "error": "timeout",
+      "status": 200,
+      "ok": true,
+      "error": null,
       "critical": false,
-      "latency_ms": 8000
+      "latency_ms": 973
     },
     {
       "name": "sitemap",
       "url": "https://liqaa.io/sitemap.xml",
       "final_url": null,
-      "status": 0,
-      "ok": false,
-      "error": "timeout",
+      "status": 200,
+      "ok": true,
+      "error": null,
       "critical": false,
-      "latency_ms": 8000
+      "latency_ms": 888
     }
   ]
 }
