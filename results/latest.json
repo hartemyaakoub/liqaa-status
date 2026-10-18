@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-18T16:48:59.148Z",
+  "timestamp": "2026-10-18T19:21:07.529Z",
   "region": "github-ubuntu-east",
   "overall": "operational",
   "results": [
@@ -11,7 +11,7 @@
       "ok": true,
       "error": null,
       "critical": true,
-      "latency_ms": 733
+      "latency_ms": 585
     },
     {
       "name": "sdk",
@@ -21,7 +21,7 @@
       "ok": true,
       "error": null,
       "critical": true,
-      "latency_ms": 523
+      "latency_ms": 430
     },
     {
       "name": "docs",
@@ -31,7 +31,7 @@
       "ok": true,
       "error": null,
       "critical": false,
-      "latency_ms": 1167
+      "latency_ms": 638
     },
     {
       "name": "console",
@@ -41,7 +41,7 @@
       "ok": true,
       "error": null,
       "critical": false,
-      "latency_ms": 1079
+      "latency_ms": 551
     },
     {
       "name": "status",
@@ -51,7 +51,7 @@
       "ok": false,
       "error": null,
       "critical": false,
-      "latency_ms": 959
+      "latency_ms": 851
     },
     {
       "name": "sitemap",
@@ -61,7 +61,7 @@
       "ok": true,
       "error": null,
       "critical": false,
-      "latency_ms": 984
+      "latency_ms": 459
     }
   ]
 }
