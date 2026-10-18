@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-18T13:28:26.460Z",
+  "timestamp": "2026-10-18T16:48:59.148Z",
   "region": "github-ubuntu-east",
   "overall": "operational",
   "results": [
@@ -11,7 +11,7 @@
       "ok": true,
       "error": null,
       "critical": true,
-      "latency_ms": 1255
+      "latency_ms": 733
     },
     {
       "name": "sdk",
@@ -21,7 +21,7 @@
       "ok": true,
       "error": null,
       "critical": true,
-      "latency_ms": 536
+      "latency_ms": 523
     },
     {
       "name": "docs",
@@ -31,7 +31,7 @@
       "ok": true,
       "error": null,
       "critical": false,
-      "latency_ms": 906
+      "latency_ms": 1167
     },
     {
       "name": "console",
@@ -41,17 +41,17 @@
       "ok": true,
       "error": null,
       "critical": false,
-      "latency_ms": 772
+      "latency_ms": 1079
     },
     {
       "name": "status",
       "url": "https://liqaa.io/status",
       "final_url": null,
-      "status": 200,
-      "ok": true,
+      "status": 500,
+      "ok": false,
       "error": null,
       "critical": false,
-      "latency_ms": 811
+      "latency_ms": 959
     },
     {
       "name": "sitemap",
@@ -61,7 +61,7 @@
       "ok": true,
       "error": null,
       "critical": false,
-      "latency_ms": 750
+      "latency_ms": 984
     }
   ]
 }
