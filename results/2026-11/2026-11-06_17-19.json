@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-11-06T17:19:21.428Z",
+  "region": "github-ubuntu-east",
+  "overall": "operational",
+  "results": [
+    {
+      "name": "home",
+      "url": "https://liqaa.io/",
+      "final_url": "https://liqaa.io/ar",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "critical": true,
+      "latency_ms": 1218
+    },
+    {
+      "name": "sdk",
+      "url": "https://liqaa.io/sdk.js",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "critical": true,
+      "latency_ms": 422
+    },
+    {
+      "name": "docs",
+      "url": "https://liqaa.io/docs",
+      "final_url": "https://liqaa.io/ar/docs",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "critical": false,
+      "latency_ms": 638
+    },
+    {
+      "name": "console",
+      "url": "https://liqaa.io/console",
+      "final_url": "https://liqaa.io/ar/console",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "critical": false,
+      "latency_ms": 608
+    },
+    {
+      "name": "status",
+      "url": "https://liqaa.io/status",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "critical": false,
+      "latency_ms": 538
+    },
+    {
+      "name": "sitemap",
+      "url": "https://liqaa.io/sitemap.xml",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "critical": false,
+      "latency_ms": 503
+    }
+  ]
+}
